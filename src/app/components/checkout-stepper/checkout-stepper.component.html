@@ -1,0 +1,16 @@
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="addressStepFormGroup">
+        <ng-template matStepLabel>Shipping</ng-template>
+        <app-checkout-address-step [addressStepFormGroup]="addressStepFormGroup"></app-checkout-address-step>
+    </mat-step>
+
+    <mat-step [stepControl]="paymentStepFormGroup">
+        <ng-template matStepLabel>Payment</ng-template>
+        <app-checkout-payment-step [paymentStepFormGroup]="paymentStepFormGroup"></app-checkout-payment-step>
+    </mat-step>
+
+    <mat-step [stepControl]="confirmStepFormGroup">
+        <ng-template matStepLabel>Confirm</ng-template>
+        <app-checkout-confirm-step [confirmStepFormGroup]="confirmStepFormGroup"></app-checkout-confirm-step>
+    </mat-step>
+</mat-stepper>
