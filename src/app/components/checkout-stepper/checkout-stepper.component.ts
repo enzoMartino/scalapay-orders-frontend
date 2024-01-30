@@ -6,7 +6,6 @@ import { CheckoutPaymentStepComponent } from '../checkout-payment-step/checkout-
 import { CHECKOUT_SHIPPING_STEP_FORM_GROUP, convertShippingStepFormToDto } from '../../common/form-groups/checkout-address-step.from-group';
 import { CHECKOUT_PAYMENT_STEP_FORM_GROUP, convertPaymentStepFormToDto } from '../../common/form-groups/checkout-payment-step.form-group';
 import { CheckoutPlaceOrderStepComponent } from '../checkout-place-order-step/checkout-place-order-step.component';
-import { classToPlain, instanceToPlain } from 'class-transformer';
 import { ShippingDetailsDto } from '../../common/dtos/shipping-details.dto';
 import { PaymentDetailsDto } from '../../common/dtos/payment-details.dto';
 
