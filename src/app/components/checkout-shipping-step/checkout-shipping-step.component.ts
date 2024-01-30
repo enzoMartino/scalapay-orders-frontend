@@ -34,10 +34,14 @@ export class CheckoutAddressStepComponent implements AfterContentInit {
   countries: { value: string; viewValue: string }[] = []
 
   ngAfterContentInit(): void {
-    this.countries = this.getCountries();
+    this.handleInit()
   }
 
-  private getCountries(): { value: string; viewValue: string }[] {
+  private async handleInit(): Promise<void> {
+    this.countries = await this.getCountries();
+  }
+
+  private async getCountries(): Promise<{ value: string; viewValue: string }[]> {
     return [{ value: 'IT', viewValue: 'Italy' }];
   }
 }
