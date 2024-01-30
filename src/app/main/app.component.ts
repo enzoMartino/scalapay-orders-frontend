@@ -1,8 +1,8 @@
 import { AfterContentInit, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { CookieModule } from './common/cookies/cookies.module';
-import { CookiesService } from './common/cookies/services/cookies.service';
+import { CheckoutComponent } from '../pages/checkout/checkout.component';
+import { CookieModule } from '../common/cookies/cookies.module';
+import { CookiesService } from '../common/cookies/services/cookies.service';
 
 @Component({
   selector: 'app-root',
