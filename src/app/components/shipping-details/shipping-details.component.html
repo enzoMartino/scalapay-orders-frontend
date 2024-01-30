@@ -1,0 +1,27 @@
+<div class="font-bold mb-5">
+    Your shipping details
+</div>
+
+<div>
+    <span>Given names:</span> <span class="font-bold"> {{ shippingDetailsDto?.givenNames }}</span>
+</div>
+
+<div>
+    <span>Family names:</span> <span class="font-bold"> {{ shippingDetailsDto?.familyNames }}</span>
+</div>
+
+<div>
+    <span>City:</span> <span class="font-bold"> {{ shippingDetailsDto?.city }}</span>
+</div>
+
+<div>
+    <span>Country:</span> <span class="font-bold"> {{ shippingDetailsDto?.countryCode | country }}</span>
+</div>
+
+<div>
+    <span>Address:</span> <span class="font-bold"> {{ shippingDetailsDto?.address }}</span>
+</div>
+
+<div>
+    <span>Postal code:</span> <span class="font-bold"> {{ shippingDetailsDto?.postalCode }}</span>
+</div>

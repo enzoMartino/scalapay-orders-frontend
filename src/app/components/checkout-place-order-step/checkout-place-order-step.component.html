@@ -1,1 +1,9 @@
-<p>You are now done.</p>
+<div class="grid grid-cols-6 mt-5">
+    <div class="col-start-2 col-span-2">
+        <app-shipping-details [shippingDetailsDto]="shippingDetailsDto"></app-shipping-details>
+    </div>
+
+    <div class="col-start-4 col-span-2">
+        <app-payment-details [paymentDetailsDto]="paymentDetailsDto"></app-payment-details>
+    </div>
+</div>

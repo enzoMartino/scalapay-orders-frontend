@@ -1,7 +1,7 @@
 <mat-stepper orientation="horizontal" (selectionChange)="onSelectionChange($event)" [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="addressStepFormGroup">
+    <mat-step [stepControl]="shippingStepFormGroup">
         <ng-template matStepLabel>Shipping</ng-template>
-        <app-checkout-address-step [addressStepFormGroup]="addressStepFormGroup"></app-checkout-address-step>
+        <app-checkout-shipping-step [shippingStepFormGroup]="shippingStepFormGroup"></app-checkout-shipping-step>
 
         <div class="grid grid-cols-6 py-5">
             <div class="col-start-4 col-span-2 justify-self-end">
@@ -27,9 +27,11 @@
 
     <mat-step>
         <ng-template matStepLabel>Place Order</ng-template>
-        <app-checkout-place-order-step></app-checkout-place-order-step>
+        <app-checkout-place-order-step [shippingDetailsDto]="shippingDetailsDto"
+            [paymentDetailsDto]="paymentDetailsDto">
+        </app-checkout-place-order-step>
 
-        <div class="grid grid-cols-6 py-5">
+        <div class="grid grid-cols-6 py-10">
             <div class="col-start-2 col-span-2 justify-self-start">
                 <button mat-button matStepperPrevious>Back</button>
             </div>
@@ -38,5 +40,5 @@
                 <button mat-button>Place Order</button>
             </div>
         </div>
-      </mat-step>
+    </mat-step>
 </mat-stepper>

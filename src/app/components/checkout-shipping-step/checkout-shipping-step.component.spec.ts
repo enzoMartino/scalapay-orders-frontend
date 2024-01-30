@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheckoutAddressStepComponent } from './checkout-address-step.component';
+import { CheckoutAddressStepComponent } from './checkout-shipping-step.component';
 
 describe('CheckoutAddressStepComponent', () => {
   let component: CheckoutAddressStepComponent;
