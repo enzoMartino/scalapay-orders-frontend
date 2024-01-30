@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CheckoutAddressStepComponent } from '../checkout-shipping-step/checkout-shipping-step.component';
 import { FormBuilder } from '@angular/forms';
@@ -23,6 +23,8 @@ import { PaymentDetailsDto } from '../../common/dtos/payment-details.dto';
 })
 
 export class CheckoutStepperComponent {
+  @Output() placeOrderClicked = new EventEmitter<ShippingDetailsDto>();
+
   isLinear = true;
   shippingDetailsDto!: ShippingDetailsDto
   paymentDetailsDto!: PaymentDetailsDto
@@ -36,12 +38,16 @@ export class CheckoutStepperComponent {
 
   constructor(private _formBuilder: FormBuilder) {}
 
-  onSelectionChange(event: any) {
+  onSelectionChange(event: any): void {
     if (this.isShippingStepCompleted(event)) {
       this.handleShippingStepCompleted()
     } else if (this.isPaymentStepCompleted(event)) {
       this.handlePaymentStepCompleted()
     }
+  }
+
+  emitPlaceOrderClicked(): void {
+    this.placeOrderClicked.emit(this.shippingDetailsDto)
   }
 
   private isShippingStepCompleted(event: any): boolean {
