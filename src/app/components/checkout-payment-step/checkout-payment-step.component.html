@@ -1,1 +1,21 @@
-<p>checkout-payment-step works!</p>
+<form [formGroup]="paymentStepFormGroup">
+    <div class="grid grid-cols-6 gap-4 py-5">
+        <!-- TODO: create common input field -->
+        <div class="justify-self-center col-start-2 col-span-4 pb-10">
+            <div>Select a payment method</div>
+        </div>
+
+        <div class="col-start-2 col-span-4">
+            <mat-radio-group required formControlName="paymentMethodCtrl" aria-label="Select a payment method">
+                @for (paymentMethod of paymentMethods; track paymentMethod) {
+                <mat-radio-button [value]="paymentMethod.value">
+                    <span class="font-bold">{{paymentMethod.viewValue}}</span>
+                </mat-radio-button>
+                }
+            </mat-radio-group>
+            @if (paymentStepFormGroup.controls.paymentMethodCtrl.hasError('required')) {
+            <mat-error>Payment method is required</mat-error>
+            }
+        </div>
+    </div>
+</form>

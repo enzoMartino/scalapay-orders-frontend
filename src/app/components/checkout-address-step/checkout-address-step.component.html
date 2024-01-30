@@ -1,37 +1,69 @@
 <form [formGroup]="addressStepFormGroup">
-    <div class="grid grid-cols-1">
-        <mat-form-field>
-            <mat-label>Given Names</mat-label>
-            <input matInput placeholder="Given names" formControlName="firstCtrl" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Family Name</mat-label>
-            <input matInput placeholder="Family name" formControlName="firstCtrl" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>City</mat-label>
-            <input matInput formControlName="firstCtrl" placeholder="Milan" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Postcode</mat-label>
-            <input matInput formControlName="firstCtrl" placeholder="20150" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Country</mat-label>
-            <input matInput formControlName="firstCtrl" placeholder="Italy" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="firstCtrl" placeholder="Via Roma, 15" required>
-        </mat-form-field>
-
-        <div>
-            <button mat-button matStepperNext>Next</button>
+    <div class="grid grid-cols-6 gap-4 py-5">
+        <!-- TODO: create common input field -->
+        <div class="justify-self-center col-start-2 col-span-4 pb-10">
+            <div>Insert you shipping details</div>
         </div>
+
+        <mat-form-field class="col-start-2 col-span-2">
+            <mat-label>Given Names</mat-label>
+            <input matInput placeholder="Mario" formControlName="givenNamesCtrl" required>
+            @if (addressStepFormGroup.controls.givenNamesCtrl.hasError('required')) {
+            <mat-error>Given names are required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="col-start-4 col-span-2">
+            <mat-label>Family Names</mat-label>
+            <input matInput placeholder="Rossi" formControlName="familyNamesCtrl" required>
+            @if (addressStepFormGroup.controls.familyNamesCtrl.hasError('required')) {
+            <mat-error>Family names are required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="col-start-2 col-span-2">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="cityCtrl" placeholder="Milan" required>
+            @if (addressStepFormGroup.controls.cityCtrl.hasError('required')) {
+            <mat-error>City is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="col-start-4 col-span-2">
+            <mat-label>Postcode</mat-label>
+            <input matInput formControlName="postalCodeCtrl" placeholder="20150" required>
+            @if (addressStepFormGroup.controls.postalCodeCtrl.hasError('required')) {
+            <mat-error>Postal code is required</mat-error>
+            }
+            @if (addressStepFormGroup.controls.postalCodeCtrl.hasError('pattern')) {
+            <mat-error>Postal code is not valid</mat-error>
+            }
+            @if (addressStepFormGroup.controls.postalCodeCtrl.hasError('minlength')) {
+            <mat-error>Postal code length should be 5</mat-error>
+            }
+            @if (addressStepFormGroup.controls.postalCodeCtrl.hasError('maxlength')) {
+            <mat-error>Postal code length should be 5</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="col-start-2 col-span-2">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="countryCtrl">
+                @for (country of countries; track country) {
+                <mat-option [value]="country.value">{{country.viewValue}}</mat-option>
+                }
+            </mat-select>
+            @if (addressStepFormGroup.controls.countryCtrl.hasError('required')) {
+            <mat-error>Country is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="col-start-4 col-span-2">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="addressCtrl" placeholder="Via Roma, 15" required>
+            @if (addressStepFormGroup.controls.addressCtrl.hasError('required')) {
+            <mat-error>Address is required</mat-error>
+            }
+        </mat-form-field>
     </div>
 </form>

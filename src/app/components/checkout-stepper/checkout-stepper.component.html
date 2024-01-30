@@ -1,16 +1,42 @@
-<mat-stepper [linear]="isLinear" #stepper>
+<mat-stepper orientation="horizontal" (selectionChange)="onSelectionChange($event)" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="addressStepFormGroup">
         <ng-template matStepLabel>Shipping</ng-template>
         <app-checkout-address-step [addressStepFormGroup]="addressStepFormGroup"></app-checkout-address-step>
+
+        <div class="grid grid-cols-6 py-5">
+            <div class="col-start-4 col-span-2 justify-self-end">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
     </mat-step>
 
     <mat-step [stepControl]="paymentStepFormGroup">
         <ng-template matStepLabel>Payment</ng-template>
         <app-checkout-payment-step [paymentStepFormGroup]="paymentStepFormGroup"></app-checkout-payment-step>
+
+        <div class="grid grid-cols-6 py-5">
+            <div class="col-start-2 col-span-2 justify-self-start">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+
+            <div class="col-start-4 col-span-2 justify-self-end">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
     </mat-step>
 
-    <mat-step [stepControl]="confirmStepFormGroup">
-        <ng-template matStepLabel>Confirm</ng-template>
-        <app-checkout-confirm-step [confirmStepFormGroup]="confirmStepFormGroup"></app-checkout-confirm-step>
-    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Place Order</ng-template>
+        <app-checkout-place-order-step></app-checkout-place-order-step>
+
+        <div class="grid grid-cols-6 py-5">
+            <div class="col-start-2 col-span-2 justify-self-start">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+
+            <div class="col-start-4 col-span-2 justify-self-end">
+                <button mat-button>Place Order</button>
+            </div>
+        </div>
+      </mat-step>
 </mat-stepper>
