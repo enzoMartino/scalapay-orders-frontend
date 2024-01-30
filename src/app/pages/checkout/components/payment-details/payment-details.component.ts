@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PaymentDetailsDto } from '../../common/dtos/payment-details.dto';
-import { PaymentMethodPipe } from '../../common/pipes/payment-method/payment-method.pipe';
+import { PaymentDetailsDto } from '../../../../common/dtos/payment-details.dto';
+import { PaymentMethodPipe } from '../../../../common/pipes/payment-method/payment-method.pipe';
 
 @Component({
   selector: 'app-payment-details',

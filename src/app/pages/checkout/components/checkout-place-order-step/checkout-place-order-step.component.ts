@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ShippingDetailsDto } from '../../common/dtos/shipping-details.dto';
-import { PaymentDetailsDto } from '../../common/dtos/payment-details.dto';
+import { ShippingDetailsDto } from '../../../../common/dtos/shipping-details.dto';
+import { PaymentDetailsDto } from '../../../../common/dtos/payment-details.dto';
 import { CommonModule } from '@angular/common';
 import { ShippingDetailsComponent } from '../shipping-details/shipping-details.component';
 import { PaymentDetailsComponent } from '../payment-details/payment-details.component';

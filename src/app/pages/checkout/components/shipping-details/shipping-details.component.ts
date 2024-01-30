@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ShippingDetailsDto } from '../../common/dtos/shipping-details.dto';
-import { CountryPipe } from '../../common/pipes/country/country.pipe';
+import { ShippingDetailsDto } from '../../../../common/dtos/shipping-details.dto';
+import { CountryPipe } from '../../../../common/pipes/country/country.pipe';
 
 @Component({
   selector: 'app-shipping-details',

@@ -10,7 +10,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
-import { CHECKOUT_SHIPPING_STEP_FORM_GROUP_TYPE } from '../../common/form-groups/checkout-address-step.from-group';
+import { CHECKOUT_SHIPPING_STEP_FORM_GROUP_TYPE } from '../../../../common/form-groups/checkout-address-step.from-group';
 
 @Component({
   selector: 'app-checkout-shipping-step',

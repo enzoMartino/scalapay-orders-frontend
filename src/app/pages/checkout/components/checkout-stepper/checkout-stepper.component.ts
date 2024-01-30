@@ -3,11 +3,11 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { CheckoutAddressStepComponent } from '../checkout-shipping-step/checkout-shipping-step.component';
 import { FormBuilder } from '@angular/forms';
 import { CheckoutPaymentStepComponent } from '../checkout-payment-step/checkout-payment-step.component';
-import { CHECKOUT_SHIPPING_STEP_FORM_GROUP, convertShippingStepFormToDto } from '../../common/form-groups/checkout-address-step.from-group';
-import { CHECKOUT_PAYMENT_STEP_FORM_GROUP, convertPaymentStepFormToDto } from '../../common/form-groups/checkout-payment-step.form-group';
+import { CHECKOUT_SHIPPING_STEP_FORM_GROUP, convertShippingStepFormToDto } from '../../../../common/form-groups/checkout-address-step.from-group';
+import { CHECKOUT_PAYMENT_STEP_FORM_GROUP, convertPaymentStepFormToDto } from '../../../../common/form-groups/checkout-payment-step.form-group';
 import { CheckoutPlaceOrderStepComponent } from '../checkout-place-order-step/checkout-place-order-step.component';
-import { ShippingDetailsDto } from '../../common/dtos/shipping-details.dto';
-import { PaymentDetailsDto } from '../../common/dtos/payment-details.dto';
+import { ShippingDetailsDto } from '../../../../common/dtos/shipping-details.dto';
+import { PaymentDetailsDto } from '../../../../common/dtos/payment-details.dto';
 
 @Component({
   selector: 'app-checkout-stepper',

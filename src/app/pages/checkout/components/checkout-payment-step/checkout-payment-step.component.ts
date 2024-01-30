@@ -1,6 +1,6 @@
 import { AfterContentInit, Component, Input } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CHECKOUT_PAYMENT_STEP_FORM_GROUP_TYPE } from '../../common/form-groups/checkout-payment-step.form-group';
+import { CHECKOUT_PAYMENT_STEP_FORM_GROUP_TYPE } from '../../../../common/form-groups/checkout-payment-step.form-group';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
