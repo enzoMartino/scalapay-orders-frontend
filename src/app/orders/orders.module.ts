@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OrdersService } from './services/orders.service';
 import { HttpModule } from '../common/http/http.module';
 import { ConfigModule } from '../common/config/config.module';
+import { PlaceOrderSuccessHandlerService } from './services/place-order-success-handler.service';
 
 
 
@@ -13,6 +14,6 @@ import { ConfigModule } from '../common/config/config.module';
     HttpModule,
     ConfigModule,
   ],
-  providers: [OrdersService]
+  providers: [OrdersService, PlaceOrderSuccessHandlerService]
 })
 export class OrdersModule { }

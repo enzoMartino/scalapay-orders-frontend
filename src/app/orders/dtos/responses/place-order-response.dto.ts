@@ -1,5 +1,5 @@
 export interface PlaceOrderResponseDto {
-    token: string
-    expires: string
-    checkoutUrl: string
+    token?: string
+    expires?: string
+    checkoutUrl?: string
 }

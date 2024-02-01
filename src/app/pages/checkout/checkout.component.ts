@@ -5,6 +5,7 @@ import { OrdersService } from '../../orders/services/orders.service';
 import { OrdersModule } from '../../orders/orders.module';
 import { LoggerModule } from '../../common/logger/logger.module';
 import { LoggerService } from '../../common/logger/services/logger.service';
+import { PlaceOrderSuccessHandlerService } from '../../orders/services/place-order-success-handler.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,8 @@ import { LoggerService } from '../../common/logger/services/logger.service';
 export class CheckoutComponent {
   constructor(
     private readonly ordersService: OrdersService,
-    private readonly loggerService: LoggerService
+    private readonly loggerService: LoggerService,
+    private readonly placeOrderSuccessHandlerService: PlaceOrderSuccessHandlerService
   ) {}
 
   async handlePlaceOrderClicked(
@@ -30,7 +32,7 @@ export class CheckoutComponent {
 
       this.loggerService.log(response.checkoutUrl)
 
-      window.location.href = response.checkoutUrl
+      this.placeOrderSuccessHandlerService.handlePlaceOrderSuccess(response)
     } catch (error: any) {
       this.loggerService.error(error.message)
     }
