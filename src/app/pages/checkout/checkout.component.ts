@@ -3,7 +3,6 @@ import { CheckoutStepperComponent } from './components/checkout-stepper/checkout
 import { ShippingDetailsDto } from '../../common/dtos/shipping-details.dto';
 import { OrdersService } from '../../orders/services/orders.service';
 import { OrdersModule } from '../../orders/orders.module';
-import { Router } from '@angular/router';
 import { LoggerModule } from '../../common/logger/logger.module';
 import { LoggerService } from '../../common/logger/services/logger.service';
 
@@ -18,7 +17,6 @@ import { LoggerService } from '../../common/logger/services/logger.service';
 export class CheckoutComponent {
   constructor(
     private readonly ordersService: OrdersService,
-    private readonly router: Router,
     private readonly loggerService: LoggerService
   ) {}
 
@@ -30,7 +28,9 @@ export class CheckoutComponent {
         shippingDetails: shippingDetailsDto,
       });
 
-      this.router.navigateByUrl(response.checkoutUrl)
+      this.loggerService.log(response.checkoutUrl)
+
+      window.location.href = response.checkoutUrl
     } catch (error: any) {
       this.loggerService.error(error.message)
     }
