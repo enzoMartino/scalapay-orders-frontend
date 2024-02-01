@@ -8,6 +8,6 @@ export class HttpService {
   constructor(private readonly httpClient: HttpClient) {}
 
   post<R, T>(url: string, body: R): Observable<T> {
-    return this.httpClient.post<T>(url, body)
+    return this.httpClient.post<T>(url, body, { withCredentials: true })
   }
 }
