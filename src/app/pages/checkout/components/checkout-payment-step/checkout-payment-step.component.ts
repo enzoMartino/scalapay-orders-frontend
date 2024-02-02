@@ -26,10 +26,14 @@ export class CheckoutPaymentStepComponent implements AfterContentInit {
   paymentMethods!: { value: string; viewValue: string }[];
 
   ngAfterContentInit(): void {
-    this.paymentMethods = this.getPaymentMethods();
+    this.handleInit()
   }
 
-  private getPaymentMethods(): { value: string; viewValue: string }[] {
+  private async handleInit(): Promise<void> {
+    this.paymentMethods = await this.getPaymentMethods();
+  }
+
+  private async getPaymentMethods(): Promise<{ value: string; viewValue: string }[]> {
     return [{ value: 'scalapay', viewValue: 'Scalapay' }];
   }
 }
